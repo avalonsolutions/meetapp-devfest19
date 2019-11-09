@@ -80,12 +80,16 @@ class _ScreenViewState extends State<ScreenView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: _buildNavBar(),
-      body: Center(
-        child: _isLoading ?
-          CircularProgressIndicator() :
-          _screens.elementAt(_screenIndex)
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Scaffold(
+        bottomNavigationBar: _buildNavBar(),
+        body: Center(
+          child: _isLoading ?
+            CircularProgressIndicator() :
+            _screens.elementAt(_screenIndex)
+        ),
       ),
     );
   }
