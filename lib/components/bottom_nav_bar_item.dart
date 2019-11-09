@@ -20,10 +20,28 @@ class BottomNavBarItem extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return IconButton(
-      color: screenIndex == navIndex ? Colors.pinkAccent : Colors.black,
-      icon: Icon(icon),
-      onPressed: ()=>onPressed(navIndex),
+    return Container(
+      height: MediaQuery.of(context).size.height*0.07,
+      child: InkWell(
+        onTap: ()=>onPressed(navIndex),
+        splashColor: Colors.pinkAccent,
+        enableFeedback: false,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon,
+              color: screenIndex == navIndex ? Colors.pinkAccent : Colors.black54,
+            ),
+            Text(
+              name,
+              style: TextStyle(
+                color: screenIndex == navIndex ? Colors.pinkAccent : Colors.black54,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
