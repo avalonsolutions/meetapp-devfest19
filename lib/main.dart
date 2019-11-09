@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:meetapp_devfest19/components/bottom_nav_bar_item.dart';
 import 'package:meetapp_devfest19/screens/explore/explore.dart';
 import 'package:meetapp_devfest19/screens/home/home.dart';
 import 'package:meetapp_devfest19/screens/messages/messages.dart';
@@ -50,28 +51,38 @@ class _ScreenViewState extends State<ScreenView> {
   }
 
   Widget _buildNavBar() =>
-    BottomAppBar( //BottomNavigationBar
-      //elevation: ,
-      //color: ,
+    BottomAppBar(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           SizedBox(width: 3.0,),
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: ()=>_onBottomNavBarItemPressed(0),
+          BottomNavBarItem(
+            icon: Icons.home,
+            onPressed: _onBottomNavBarItemPressed,
+            navIndex: 0,
+            screenIndex: _screenIndex,
+            name: 'Home',
           ),
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: ()=>_onBottomNavBarItemPressed(1),
+          BottomNavBarItem(
+            icon: Icons.search,
+            onPressed: _onBottomNavBarItemPressed,
+            navIndex: 1,
+            screenIndex: _screenIndex,
+            name: 'Search',
           ),
-          IconButton(
-            icon: Icon(Icons.notifications),
-            onPressed: ()=>_onBottomNavBarItemPressed(2),
+          BottomNavBarItem(
+            icon: Icons.notifications,
+            onPressed: _onBottomNavBarItemPressed,
+            navIndex: 2,
+            screenIndex: _screenIndex,
+            name: 'Notifications',
           ),
-          IconButton(
-            icon: Icon(Icons.message),
-            onPressed: ()=>_onBottomNavBarItemPressed(3),
+          BottomNavBarItem(
+            icon: Icons.message,
+            onPressed: _onBottomNavBarItemPressed,
+            navIndex: 3,
+            screenIndex: _screenIndex,
+            name: 'Messages',
           ),
           SizedBox(width: 7.0,),
         ],
