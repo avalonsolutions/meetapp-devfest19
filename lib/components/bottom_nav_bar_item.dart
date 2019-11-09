@@ -25,6 +25,7 @@ class BottomNavBarItem extends StatelessWidget{
       child: InkWell(
         onTap: ()=>onPressed(navIndex),
         splashColor: Colors.pinkAccent,
+        highlightColor: Colors.transparent,
         enableFeedback: false,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
