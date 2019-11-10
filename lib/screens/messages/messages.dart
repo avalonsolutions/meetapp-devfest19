@@ -41,7 +41,6 @@ class _MessagesScreenState extends State<MessagesScreen>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
         title: Text(
           'Messages',
           style: TextStyle(
@@ -58,7 +57,6 @@ class _MessagesScreenState extends State<MessagesScreen>{
       ),
       body: _buildBody(),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pinkAccent,
         child: Icon(Icons.add),
         onPressed: (){},
       ),

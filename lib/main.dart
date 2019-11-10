@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meetapp Clone',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.pink,
       ),
       home: ScreenView(),
     );
