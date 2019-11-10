@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:meetapp_devfest19/screens/notifications/components/notification.dart';
 
 class NotificationsScreen extends StatefulWidget{
   @override
@@ -7,6 +7,18 @@ class NotificationsScreen extends StatefulWidget{
 }
 
 class _NotificationsScreenState extends State<NotificationsScreen>{
+  
+  Widget _buildBody() =>
+    ListView(
+      children: <Widget>[
+        NotificationItem(
+          title: 'This new group just started: SF Distributed Systems Reading Group',
+          time: '16 hours ago',
+          imageUri: 'https://www.meetup.com/mu_static/ru-RU/group_fallback_large_4.8ec50b0a.png',
+        )
+      ],
+    );
+  
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -19,9 +31,7 @@ class _NotificationsScreenState extends State<NotificationsScreen>{
         ),
         centerTitle: false,
       ),
-      body: Center(
-        child: Text('Notifications'),
-      ),
+      body: _buildBody(),
     );
   }
 }
