@@ -92,7 +92,7 @@ class _ScreenViewState extends State<ScreenView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top: false,
+      top: true,
       bottom: true,
       child: Scaffold(
         bottomNavigationBar: _buildNavBar(),
