@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meetapp_devfest19/components/avatar.dart';
 import 'package:meetapp_devfest19/screens/home/component/group.dart';
 import 'package:meetapp_devfest19/screens/home/components/calendar/suggestion.dart';
+import 'package:meetapp_devfest19/screens/home/screens/profile/profile.dart';
 
 
 class HomeScreen extends StatefulWidget{
@@ -27,10 +28,19 @@ class _HomeScreenState extends State<HomeScreen>{
       margin: EdgeInsets.only(
         right: 10.0,
       ),
-      child: Center(
-        child: Avatar(
-          radius: 16.0,
-          imagePath: 'assets/images/avatar.png',
+      child: InkWell(
+        onTap: (){
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ProfileScreen()
+            ),
+          );
+        },
+        child: Center(
+          child: Avatar(
+            radius: 16.0,
+            imagePath: 'assets/images/avatar.png',
+          ),
         ),
       ),
     );
