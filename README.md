@@ -1,3 +1,3 @@
 # meetapp_devfest19
 
-Meetup app minimal clone for GDG Devfest 2019
+Meetup app minimal & loose clone for GDG Devfest 2019
