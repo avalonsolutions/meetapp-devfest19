@@ -6,12 +6,14 @@ class CalendarSuggestion extends StatefulWidget{
   final String title;
   final String details;
   final String venue;
+  final Function onSave;
 
   const CalendarSuggestion({
     Key key,
     @required this.title,
     @required this.details,
     @required this.venue,
+    @required this.onSave,
   }) : assert (title.length > 0),
        assert (details.length > 0),
        assert (venue.length > 0),
@@ -22,7 +24,7 @@ class CalendarSuggestion extends StatefulWidget{
 }
 
 class _CalendarSuggestionState extends State<CalendarSuggestion>{
-  bool isSaved;
+  bool isSaved = false;
 
   Widget _buildAvatars() =>
    Row(
@@ -49,6 +51,14 @@ class _CalendarSuggestionState extends State<CalendarSuggestion>{
         ),
      ],
    );
+
+  void _onSaved(){
+    final String message = isSaved ? 'Meetup unsaved' : 'Meetup saved';
+    setState(() {
+      isSaved = !isSaved;
+    });
+    widget.onSave(message);
+  }
 
   @override
   Widget build(BuildContext context){
@@ -99,11 +109,24 @@ class _CalendarSuggestionState extends State<CalendarSuggestion>{
                   Text('70'),
                 ],
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.star_border,
-                ), 
-                onPressed: (){},
+              AnimatedSwitcher(
+                duration: Duration(milliseconds: 500),
+                child: !isSaved ?
+                  IconButton(
+                    key: GlobalKey(),
+                    icon: Icon(
+                      Icons.star_border,
+                    ), 
+                    onPressed: ()=>_onSaved(),
+                    ) :
+                  IconButton(
+                    key: GlobalKey(),
+                    icon: Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ), 
+                    onPressed: ()=>_onSaved(),
+                  ),
               ),
             ],
           ),

@@ -149,36 +149,43 @@ class _HomeScreenState extends State<HomeScreen>{
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
         CalendarSuggestion(
           title: 'Silicon Valley New Technology Startups',
           details: 'Business Opportunities & Compliance Requirements with US Government',
           venue: '6:15 PM - Studio Red',
+          onSave: _showSnackbar,
         ),
       ],
     );
@@ -201,6 +208,14 @@ class _HomeScreenState extends State<HomeScreen>{
         ),
       ],
     );
+
+  void _showSnackbar(String message){
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      )
+    );
+  }
 
   @override
   Widget build(BuildContext context){
