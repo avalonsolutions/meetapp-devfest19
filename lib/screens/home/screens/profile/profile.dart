@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meetapp_devfest19/components/avatar.dart';
+import 'package:meetapp_devfest19/screens/home/screens/profile/components/interest.dart';
 import 'package:meetapp_devfest19/screens/home/screens/profile/components/member_group.dart';
 
 
@@ -122,18 +123,33 @@ class _ProfileScreenState extends State<ProfileScreen>{
   }
 
   Widget _buildInterests() =>
-    Padding(
-      padding: EdgeInsets.symmetric(vertical: 14.0),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-          'Interests',
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            letterSpacing: 1.8,
+    Column(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 14.0),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Interests',
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.8,
+              ),
+            ),
           ),
         ),
-      ),
+        Wrap(
+          direction: Axis.horizontal,
+          spacing: 20.0,
+          runSpacing: 10.0,
+          children: <Widget>[
+            Interest(name: 'New Technology'),
+            Interest(name: 'Machine Learning'),
+            Interest(name: 'Computer Programming'),
+            Interest(name: 'Software Development'),
+          ],
+        ),
+      ],
     );
 
   Widget _buildBody() =>
@@ -142,7 +158,10 @@ class _ProfileScreenState extends State<ProfileScreen>{
       children: <Widget>[
         _buildInfo(),
         _buildGroups(),
-        _buildInterests(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.0),
+          child: _buildInterests(),
+        ),
       ],
     );
   
